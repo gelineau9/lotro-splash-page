@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 49 80% 87%;
+    --foreground: 120 40% 43%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 120 40% 43%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 39 80% 56%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    /* Start with opacity 0 and set a transition for the fade-in effect */
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+  }
+  /* This class will be added by a script to trigger the fade-in */
+  body.fonts-loaded {
+    opacity: 1;
+  }
+}
+
+/* Base font styles using the variable from next/font */
+.prose,
+.prose p,
+.prose li,
+.prose h1 {
+  font-family: var(--font-tolkien), serif;
+}
+
+/* When the accessible font is enabled via the data-attribute, override the font */
+html[data-font-style="accessible"] .prose,
+html[data-font-style="accessible"] .prose p,
+html[data-font-style="accessible"] .prose li,
+html[data-font-style="accessible"] .prose h1,
+html[data-font-style="accessible"] .prose strong,
+html[data-font-style="accessible"] .prose a {
+  font-family: Arial, sans-serif;
+}
+
+.prose p,
+.prose li,
+.prose strong {
+  @apply text-[#22481E];
+}
+
+.prose a {
+  color: #5865f2;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  background: #fae8c3;
+  padding: 0.1em 0.4em;
+  border-radius: 0.3em;
+  transition: background 0.2s, color 0.2s;
+}
+
+.prose a:hover {
+  background: #22481e;
+  color: #fae8c3;
+}
+
+.prose ul {
+  list-style-type: none;
+  padding-left: 1.5rem;
+}
+
+.prose ul li {
+  position: relative;
+  font-family: var(--font-tolkien), serif;
+}
+
+.prose ul li:before {
+  content: "• ";
+  position: absolute;
+  left: -1.5rem;
+}
+
+/* Custom scrollbar for a more themed experience */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fae8c3;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #22481e;
+  border-radius: 6px;
+  border: 3px solid #fae8c3;
+}
+
+strong {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  font-weight: 700 !important;
+}
