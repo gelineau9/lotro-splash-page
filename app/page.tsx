@@ -130,7 +130,7 @@ export default function Home() {
           <p className="mt-6">
             For information and updates about The Brandy Hall Archives, join our{" "}
             <a
-              href="https://discord.com/channels/@me/1327543140202053632/1375501162656169995"
+              href="https://discord.gg/dnqFVATpj6"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-[#22481E] font-bold underline underline-offset-2 hover:text-[#1a3617] transition-colors"
